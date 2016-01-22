@@ -100,6 +100,7 @@ $ webpack
 1. [Hot Module Replacement](#demo15-hot-module-replacement-source)
 1. [React router](#demo16-react-router-source)
 
+<a name="demo01-entry-file-source">
 ## Demo01：進入點檔案（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo01)）
 
 進入點檔案會被 Webpack 讀取並 build 成 bundle.js。
@@ -139,6 +140,7 @@ module.exports = {
 $ webpack-dev-server
 ```
 
+<a name="demo02-multiple-entry-files-source">
 ## Demo02：多個進入點檔案（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo02)）
 
 多個進入點檔案是可行的。這在多頁的 app 相當的有用。
@@ -176,6 +178,7 @@ module.exports = {
 };
 ```
 
+<a name="demo03-babel-loader-source">
 ## Demo03：Babel-loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo03)）
 
 Loaders 是轉換 app 資源檔案的預處理器（[更多資訊](http://webpack.github.io/docs/using-loaders.html)）。例如，[Babel-loader](https://www.npmjs.com/package/babel-loader)可以轉換 JSX/ES6 檔案至 JS 檔案。官方文件有 [loaders](http://webpack.github.io/docs/list-of-loaders.html) 的完整列表。
@@ -240,6 +243,7 @@ module: {
 }
 ```
 
+<a name="demo04-css-loader-source">
 ## Demo04：CSS-loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo04)）
 
 Webpack 讓你可以 在 JS 檔案中 require CSS，並使用 CSS-loader 來預處理 CSS 檔案。
@@ -302,6 +306,7 @@ module.exports = {
 </head>
 ```
 
+<a name="demo05-image-loader-source">
 ## Demo05：Image loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo05)）
 
 Webpack 也可以在 JS 檔案中 require 圖片。
@@ -353,6 +358,7 @@ module.exports = {
 <img src="4853ca667a2b8b8844eb2693ac1b2578.png">
 ```
 
+<a name="demo06-css-module-source">
 ## Demo06：CSS Module（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo06)）
 
 `css-loader?modules`（查詢參數 modules）會開啟 [CSS Modules](https://github.com/css-modules/css-modules) 功能。
@@ -435,6 +441,7 @@ $ webpack-dev-server
 
 瀏覽 http://127.0.0.1:8080，你會看到只有第二個 `h1` 是紅色，因為它的 CSS 為區域範圍，而兩個 `h2` 都是藍色，因為它的 CSS 是全域範圍（global scoped）。
 
+<a name="demo07-uglifyjs-plugin-source">
 ## Demo07：UglifyJs Plugin（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo07)）
 
 Webpack 擁有 plugin 系統來擴增它的功能。例如，[UglifyJs Plugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)會壓縮輸出的（`bundle.js`） JS 程式碼。
@@ -483,6 +490,7 @@ module.exports = {
 var o="Hello";o+=" World",document.write("<h1>"+o+"</h1>")
 ```
 
+<a name="demo08-html-webpack-plugin-and-open-browser-webpack-plugin-source">
 ## Demo08：HTML Webpack Plugin 及 Open Browser Webpack Plugin（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo08)）
 
 此 demo 為你展示如何載入第三方 plugins。
@@ -525,6 +533,7 @@ $ webpack-dev-server
 
 現在你不必手動撰寫 `index.html`，也不必自己打開瀏覽器。 Webpack 會為你做這些事。
 
+<a name="demo09-environment-flags-source">
 ## Demo09: 環境標記（flags）（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo09)）
 
 你可以透過環境標記，讓某些程式碼只在開發環境時啟用。
@@ -577,6 +586,7 @@ $ env DEBUG=true webpack-dev-server
 $ DEBUG=true webpack-dev-server
 ```
 
+<a name="demo10-code-splitting-source">
 ## Demo10：程式碼分割（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo10)）
 
 對於大型的 web app 來說將所有程式碼放置於同個檔案是很沒效率的，Webpack 讓你可以將它們分割成幾個 chunk 。特別在某些程式碼區塊只需要在某些情況下 required，這些 chunk 可以按需求載入。
@@ -629,6 +639,7 @@ $ webpack-dev-server
 
 表面上，你不會感覺到任何差異。不過，Webpack 實際上 builds `main.js` 及 `a.js` 至不同的 chunks（`bundle.js` 及 `1.bundle.js`），並在有需求的時候從 `bundle.js` 載入 `1.bundle.js`。
 
+<a name="demo11-code-splitting-with-bundle-loader-source">
 ## Demo11：使用 bundle-loader 進行程式碼分割（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo11)）
 
 另一個程式碼分割的方式是使用 [bundle-loader](https://www.npmjs.com/package/bundle-loader)。
@@ -652,6 +663,7 @@ load(function(file) {
 
 現在 Webpack 會 build `main.js` 至 `bundle.js`，`a.js` 至 `1.bundle.js`。
 
+<a name="demo12-common-chunk-source">
 ## Demo12：通用 chunk（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo12)）
 
 當多個 scripts 擁有通用的 chunks，你可以使用 CommonsChunkPlugin 取出通用的部分至一個分離的檔案。
@@ -720,6 +732,7 @@ module.exports = {
 }
 ```
 
+<a name="demo13-vendor-chunk-source">
 ## Demo13：第三方 chunk（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo13)）
 
 你也可以使用 CommonsChunkPlugin 從 script 取出第三方函式庫至分離的檔案。
@@ -789,6 +802,7 @@ module.exports = {
 };
 ```
 
+<a name="demo14-exposing-global-variables-source">
 ## Demo14：暴露（expose）全域變數 ([source](https://github.com/jigsawye/webpack-demos/tree/master/demo14))
 
 如果你想使用一些全域變數，且不想讓他們包含在 Webpack bundle 中，你可以啟用 `webpack.config.js` 中的 `externals` 區塊（[官方文件](http://webpack.github.io/docs/library-and-externals.html)）。
@@ -841,6 +855,7 @@ ReactDOM.render(
 );
 ```
 
+<a name="demo15-hot-module-replacement-source">
 ## Demo15：Hot Module Replacement（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo15)）
 
 [Hot Module Replacement](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack)（HMR）在應用程式執行時進行交換、增加，或移除 modules，但**頁面不需重新載入**。
@@ -943,6 +958,7 @@ index.html
 </html>
 ```
 
+<a name="demo16-react-router-source">
 ## Demo16：React router（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo16)）
 
 此 demo 使用 webpack 來 build [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md) 的官方範例。
