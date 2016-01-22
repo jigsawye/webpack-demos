@@ -1,45 +1,47 @@
-This repo is a collection of simple demos of Webpack.
+翻譯自[ruanyf/webpack-demos](https://github.com/ruanyf/webpack-demos)。
 
-These demos are purposely written in a simple and clear style. You will find no difficulty in following them to learn the powerful tool.
+此 repo 包含了一些 Webpack 簡單的 demo。
 
-## How to use
+這些 demo 故意使用簡單且乾淨的方式來撰寫。你會發現可以不費吹灰之力來學習這些有力的工具。
 
-First, install [Webpack](https://www.npmjs.com/package/webpack) and [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) globally.
+## 如何使用
+
+首先，全域安裝 [Webpack](https://www.npmjs.com/package/webpack) 及 [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server)。
 
 ```bash
 $ npm i -g webpack webpack-dev-server
 ```
 
-Then, clone the repo and install the dependencies.
+接著 clone 此 repo 並安裝 dependencies。
 
 ```bash
-$ git clone git@github.com:ruanyf/webpack-demos.git
+$ git clone git@github.com:jigsawye/webpack-demos.git
 $ cd webpack-demos
 $ npm install
 ```
 
-Now, play with the source files under the repo's demo* directories.
+現在可以在 repo 的 demo* 目錄中執行原始檔案。
 
 ```bash
 $ cd demo01
 $ webpack-dev-server
 ```
 
-Visit http://127.0.0.1:8080 with your browser.
+在你的瀏覽器打開 http://127.0.0.1:8080。
 
-## Foreword: What is Webpack
+## 前言：什麼是 Webpack
 
-Webpack is a front-end build systems like Grunt and Gulp.
+Webpack 是一個如同 Grunt 與 Gulp 的前端建構（Build）系統。
 
-It can be used as a module bundler similar to Browserify, and do [much more](http://webpack.github.io/docs/what-is-webpack.html).
+可以像 Browserify 一般將它作為模組打包器（module bundler），但包含其他[更多功能](http://webpack.github.io/docs/what-is-webpack.html)。
 
 ```bash
 $ browserify main.js > bundle.js
-# be equivalent to
+# 會同等於
 $ webpack main.js bundle.js
 ```
 
-Its configuration file is `webpack.config.js`.
+設定檔為 `webpack.config.js`。
 
 ```javascript
 // webpack.config.js
@@ -51,21 +53,21 @@ module.exports = {
 };
 ```
 
-After having `webpack.config.js`, you can invoke Webpack without any arguments.
+有了 `webpack.config.js` 之後，你可以不帶任何參數呼叫 Webpack。
 
 ```bash
 $ webpack
 ```
 
-Some command-line options you should know.
+一些你應該知道的命令列（command-line）選項。
 
-- `webpack` – for building once for development
-- `webpack -p` – for building once for production (minification)
-- `webpack --watch` – for continuous incremental build
-- `webpack -d` – to include source maps
-- `webpack --colors` – for making things pretty
+- `webpack` – 在開發（development）環境 build 一次
+- `webpack -p` – 在上線（production）環境 build 一次（壓縮）
+- `webpack --watch` – 監控並自動 build
+- `webpack -d` – 包含 source maps
+- `webpack --colors` – 讓它更美觀
 
-To produce a production ready application, you could write `scripts` field in your package.json file as following.
+若要產生準備上線的應用程式，你可以如下撰寫 package.json 檔案的 `scripts` 區塊。
 
 ```javascript
 // package.json
@@ -79,30 +81,30 @@ To produce a production ready application, you could write `scripts` field in yo
 }
 ```
 
-## Index
+## 目錄
 
-1. [Entry file](#demo01-entry-file-source)
-1. [Multiple entry files](#demo02-multiple-entry-files-source)
+1. [進入點檔案](#demo01-entry-file-source)
+1. [多個進入點檔案](#demo02-multiple-entry-files-source)
 1. [Babel-loader](#demo03-babel-loader-source)
 1. [CSS-loader](#demo04-css-loader-source)
 1. [Image loader](#demo05-image-loader-source)
 1. [CSS Module](#demo06-css-module-source)
 1. [UglifyJs Plugin](#demo07-uglifyjs-plugin-source)
-1. [HTML Webpack Plugin and Open Browser Webpack Plugin](#demo08-html-webpack-plugin-and-open-browser-webpack-plugin-source)
-1. [Environment flags](#demo09-environment-flags-source)
-1. [Code splitting](#demo10-code-splitting-source)
-1. [Code splitting with bundle-loader](#demo11-code-splitting-with-bundle-loader-source)
-1. [Common chunk](#demo12-common-chunk-source)
-1. [Vendor chunk](#demo13-vendor-chunk-source)
-1. [Exposing Global Variables](#demo14-exposing-global-variables-source)
+1. [HTML Webpack Plugin 與 Open Browser Webpack Plugin](#demo08-html-webpack-plugin-and-open-browser-webpack-plugin-source)
+1. [環境標記（flags）](#demo09-environment-flags-source)
+1. [程式碼分割](#demo10-code-splitting-source)
+1. [使用 bundle-loader 進行程式碼分割](#demo11-code-splitting-with-bundle-loader-source)
+1. [通用 chunk](#demo12-common-chunk-source)
+1. [第三方 chunk](#demo13-vendor-chunk-source)
+1. [暴露（expose）全域變數](#demo14-exposing-global-variables-source)
 1. [Hot Module Replacement](#demo15-hot-module-replacement-source)
 1. [React router](#demo16-react-router-source)
 
-## Demo01: Entry file ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo01))
+## Demo01：進入點檔案（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo01)）
 
-Entry file is a file which Webpack will read to build bundle.js.
+進入點檔案會被 Webpack 讀取並 build 成 bundle.js。
 
-For example, `main.js` is an entry file.
+例如，`main.js` 是個進入點檔案。
 
 ```javascript
 // main.js
@@ -119,7 +121,7 @@ index.html
 </html>
 ```
 
-Webpack follows `webpack.config.js` to build `bundle.js`.
+Webpack 會遵循 `webpack.config.js` 來 build `bundle.js`。
 
 ```javascript
 // webpack.config.js
@@ -131,15 +133,15 @@ module.exports = {
 };
 ```
 
-Launch the server, visit http://127.0.0.1:8080 .
+執行伺服器，瀏覽 http://127.0.0.1:8080。
 
 ```bash
 $ webpack-dev-server
 ```
 
-## Demo02: Multiple entry files ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo02))
+## Demo02：多個進入點檔案（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo02)）
 
-Multiple entry files are allowed. It is useful for a multi-page app.
+多個進入點檔案是可行的。這在多頁的 app 相當的有用。
 
 ```javascript
 // main1.js
@@ -174,11 +176,11 @@ module.exports = {
 };
 ```
 
-## Demo03: Babel-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo03))
+## Demo03：Babel-loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo03)）
 
-Loaders are preprocessors which transform a resource file of your app ([more info](http://webpack.github.io/docs/using-loaders.html)). For example, [Babel-loader](https://www.npmjs.com/package/babel-loader) can transform JSX/ES6 file into JS file. Official doc has a complete list of [loaders](http://webpack.github.io/docs/list-of-loaders.html).
+Loaders 是轉換 app 資源檔案的預處理器（[更多資訊](http://webpack.github.io/docs/using-loaders.html)）。例如，[Babel-loader](https://www.npmjs.com/package/babel-loader)可以轉換 JSX/ES6 檔案至 JS 檔案。官方文件有 [loaders](http://webpack.github.io/docs/list-of-loaders.html) 的完整列表。
 
-`main.jsx` is a JSX file.
+`main.jsx` 是個 JSX 檔案。
 
 ```javascript
 const React = require('react');
@@ -221,7 +223,7 @@ module.exports = {
 };
 ```
 
-In `webpack.config.js`, `module.loaders` field is used to assign loaders. The above snippet uses `babel-loader` which also needs plugins [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) and [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) to transpile ES6 and React. You can also take another way to set the babel query option.
+在 `webpack.config.js` 中，`module.loaders` 部份被使用於指定 loaders。上方的程式片段使用了 `babel-loader`，它還同時需要 [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) 與 [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) 來轉譯 ES6 及 Reacy。你也可以使用其他方式來設定 babel 的查詢（query）選項。
 
 ```javascript
 module: {
@@ -238,9 +240,9 @@ module: {
 }
 ```
 
-## Demo04: CSS-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo04))
+## Demo04：CSS-loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo04)）
 
-Webpack allows you to require CSS in JS file, then preprocessed CSS file with CSS-loader.
+Webpack 讓你可以 在 JS 檔案中 require CSS，並使用 CSS-loader 來預處理 CSS 檔案。
 
 main.js
 
@@ -285,9 +287,9 @@ module.exports = {
 };
 ```
 
-Attention, you have to use two loaders to transform CSS file. First is [CSS-loader](https://www.npmjs.com/package/css-loader) to read CSS file, and another is [Style-loader](https://www.npmjs.com/package/style-loader) to insert Style tag into HTML page. Different loaders are linked by exclamation mark(!).
+請注意，你需要使用兩種 loaders 來轉譯 CSS 檔案。首先使用 [CSS-loader](https://www.npmjs.com/package/css-loader) 來讀取 CSS 檔案，接著使用 [Style-loader](https://www.npmjs.com/package/style-loader) 寫入 Style 標籤至 HTML 頁面。不同的 loaders 使用驚嘆號（!）來連接。
 
-After launching the server, `index.html` will have inline style.
+在執行伺服器之後，`index.html` 會擁有行內樣式（inline style）。
 
 ```html
 <head>
@@ -300,9 +302,9 @@ After launching the server, `index.html` will have inline style.
 </head>
 ```
 
-## Demo05: Image loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo05))
+## Demo05：Image loader（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo05)）
 
-Webpack could also require images in JS files.
+Webpack 也可以在 JS 檔案中 require 圖片。
 
 main.js
 
@@ -342,20 +344,20 @@ module.exports = {
 };
 ```
 
-[url-loader](https://www.npmjs.com/package/url-loader) transforms image files. If the image size is smaller than 8192 bytes, it will be transformed into Data URL; otherwise, it will be transformed into normal URL. As you see, question mark(?) is be used to pass parameters into loaders.
+[url-loader](https://www.npmjs.com/package/url-loader) 會轉譯圖片檔案。如果圖片大小小於 8192 bytes，圖片就會被轉譯成 Data URL；否則它會被轉譯成普通的 URL。如你所見，問號（?）被用於傳遞參數至 loaders。
 
-After launching the server, `small.png` and `big.png` will have the following URLs.
+在執行伺服器之後，`small.png` 及 `big.png` 會變成下方的 URLs。
 
 ```html
 <img src="data:image/png;base64,iVBOR...uQmCC">
 <img src="4853ca667a2b8b8844eb2693ac1b2578.png">
 ```
 
-## Demo06: CSS Module ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo06))
+## Demo06：CSS Module（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo06)）
 
-`css-loader?modules` （the query parameter modules) enables the [CSS Modules](https://github.com/css-modules/css-modules) spec.
+`css-loader?modules`（查詢參數 modules）會開啟 [CSS Modules](https://github.com/css-modules/css-modules) 功能。
 
-It means your module's CSS is local scoped CSS by default. You can switch it off with `:global(...)` for selectors and/or rules. ([more info](https://css-modules.github.io/webpack-demo/))
+這代表你 module 的 CSS 預設會是區域範圍（local scoped）的 CSS。你可以在選擇器及／或規則使用 `:global(...)` 切換成關閉。（[更多資訊](https://css-modules.github.io/webpack-demo/)）
 
 index.html
 
@@ -425,17 +427,17 @@ module.exports = {
 };
 ```
 
-Launch the server.
+執行伺服器。
 
 ```bash
 $ webpack-dev-server
 ```
 
-Visit http://127.0.0.1:8080 , you'll find that only second `h1` is red, because its CSS is local scoped, and both `h2` is blue, because its CSS is global scoped.
+瀏覽 http://127.0.0.1:8080，你會看到只有第二個 `h1` 是紅色，因為它的 CSS 為區域範圍，而兩個 `h2` 都是藍色，因為它的 CSS 是全域範圍（global scoped）。
 
-## Demo07: UglifyJs Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo07))
+## Demo07：UglifyJs Plugin（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo07)）
 
-Webpack has a plugin system to expand its functions. For example, [UglifyJs Plugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) will minify output(`bundle.js`) JS codes.
+Webpack 擁有 plugin 系統來擴增它的功能。例如，[UglifyJs Plugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)會壓縮輸出的（`bundle.js`） JS 程式碼。
 
 main.js
 
@@ -475,17 +477,17 @@ module.exports = {
 };
 ```
 
-After launching the server, `main.js` will be minified into following.
+在執行伺服器之後，`main.js` 會被壓縮成如下。
 
 ```javascript
 var o="Hello";o+=" World",document.write("<h1>"+o+"</h1>")
 ```
 
-## Demo08: HTML Webpack Plugin and Open Browser Webpack Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo08))
+## Demo08：HTML Webpack Plugin 及 Open Browser Webpack Plugin（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo08)）
 
-This demo shows you how to load 3rd-party plugins.
+此 demo 為你展示如何載入第三方 plugins。
 
-[html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) could create `index.html` for you, and [open-browser-webpack-plugin](https://github.com/baldore/open-browser-webpack-plugin) could open a new browser tab when Webpack loads.
+[html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) 會為你建立 `index.html`，而 [open-browser-webpack-plugin](https://github.com/baldore/open-browser-webpack-plugin) 會在 Webpack 載入後打開一個新的瀏覽器分頁。
 
 main.js
 
@@ -515,17 +517,17 @@ module.exports = {
 };
 ```
 
-Run `webpack-dev-server`.
+執行 `webpack-dev-server`。
 
 ```bash
 $ webpack-dev-server
 ```
 
-Now you don't need to write `index.html` by hand and don't have to open browser by yourself. Webpack did all these things for you.
+現在你不必手動撰寫 `index.html`，也不必自己打開瀏覽器。 Webpack 會為你做這些事。
 
-## Demo09: Environment flags ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo09))
+## Demo09: 環境標記（flags）（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo09)）
 
-You can enable some codes only in development environment with environment flags.
+你可以透過環境標記，讓某些程式碼只在開發環境時啟用。
 
 main.js
 
@@ -565,7 +567,7 @@ module.exports = {
 };
 ```
 
-Now pass environment variable into webpack.
+現在傳遞環境變數至 webpack。
 
 ```bash
 # Linux & Mac
@@ -575,11 +577,11 @@ $ env DEBUG=true webpack-dev-server
 $ DEBUG=true webpack-dev-server
 ```
 
-## Demo10: Code splitting ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo10))
+## Demo10：程式碼分割（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo10)）
 
-For big web apps it’s not efficient to put all code into a single file, Webpack allows you to split them into several chunks. Especially if some blocks of code are only required under some circumstances, these chunks could be loaded on demand.
+對於大型的 web app 來說將所有程式碼放置於同個檔案是很沒效率的，Webpack 讓你可以將它們分割成幾個 chunk 。特別在某些程式碼區塊只需要在某些情況下 required，這些 chunk 可以按需求載入。
 
-At first, you use `require.ensure` to define a split point. ([official document](http://webpack.github.io/docs/code-splitting.html))
+首先，使用 `require.ensure` 來定義分割點。（[官方文件](http://webpack.github.io/docs/code-splitting.html)）
 
 ```javascript
 // main.js
@@ -591,14 +593,14 @@ require.ensure(['./a'], function(require) {
 });
 ```
 
-`require.ensure` tells Webpack that `./a.js` should be separated from `bundle.js` and  built into a single chunk file.
+`require.ensure` 告知 Webpack `./a.js` 必須從 `bundle.js` 分離並 build 至單一的 chunk 檔案。
 
 ```javascript
 // a.js
 module.exports = 'Hello World';
 ```
 
-Now Webpack takes care of the dependencies, output files and runtime stuff. You don't have to put any redundancy into your `index.html` and `webpack.config.js`.
+現在 Webpack 會處理依賴、輸出檔案及執行時的相關事務。你不必放置任何冗餘的東西至 `index.html` 及 `webpack.config.js`。
 
 ```html
 <html>
@@ -619,26 +621,26 @@ module.exports = {
 };
 ```
 
-Launch the server.
+執行伺服器。
 
 ```bash
 $ webpack-dev-server
 ```
 
-On the surface, you won't feel any differences. However, Webpack actually builds `main.js` and `a.js` into different chunks(`bundle.js` and `1.bundle.js`), and loads `1.bundle.js` from `bundle.js` when on demand.
+表面上，你不會感覺到任何差異。不過，Webpack 實際上 builds `main.js` 及 `a.js` 至不同的 chunks（`bundle.js` 及 `1.bundle.js`），並在有需求的時候從 `bundle.js` 載入 `1.bundle.js`。
 
-## Demo11: Code splitting with bundle-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo11))
+## Demo11：使用 bundle-loader 進行程式碼分割（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo11)）
 
-Another way of code splitting is using [bundle-loader](https://www.npmjs.com/package/bundle-loader).
+另一個程式碼分割的方式是使用 [bundle-loader](https://www.npmjs.com/package/bundle-loader)。
 
 ```javascript
 // main.js
 
-// Now a.js is requested, it will be bundled into another file
+// 現在 a.js 被請求，他會被 bundled 至另一個檔案
 var load = require('bundle-loader!./a.js');
 
-// To wait until a.js is available (and get the exports)
-//  you need to async wait for it.
+// 若要等待 a.js 直到他可用（並取得導出）
+// 你需要為進行它非同步等待。
 load(function(file) {
   document.open();
   document.write('<h1>' + file + '</h1>');
@@ -646,13 +648,13 @@ load(function(file) {
 });
 ```
 
-`require('bundle-loader!./a.js')` tells Webpack to load `a.js` from another chunk.
+`require('bundle-loader!./a.js')` 告知 Webpack 從另一個 chunk 載入 `a.js`。
 
-Now Webpack will build `main.js` into `bundle.js`, and `a.js` into `1.bundle.js`.
+現在 Webpack 會 build `main.js` 至 `bundle.js`，`a.js` 至 `1.bundle.js`。
 
-## Demo12: Common chunk ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo12))
+## Demo12：通用 chunk（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo12)）
 
-When multi scripts have common chunks, you can extract the common part into a separate file with CommonsChunkPlugin.
+當多個 scripts 擁有通用的 chunks，你可以使用 CommonsChunkPlugin 取出通用的部分至一個分離的檔案。
 
 ```javascript
 // main1.jsx
@@ -718,9 +720,9 @@ module.exports = {
 }
 ```
 
-## Demo13: Vendor chunk ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo13))
+## Demo13：第三方 chunk（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo13)）
 
-You can also extract the vendor libraries from a script into a separate file with CommonsChunkPlugin.
+你也可以使用 CommonsChunkPlugin 從 script 取出第三方函式庫至分離的檔案。
 
 main.js
 
@@ -760,7 +762,7 @@ module.exports = {
 };
 ```
 
-If you want a module available as variable in every module, such as making $ and jQuery available in every module without writing `require("jquery")`. You should use `ProvidePlugin` ([Official doc](http://webpack.github.io/docs/shimming-modules.html)).
+如果你想讓一個 module 在每個 module 作為可用的變數，像是讓 $ 與 jQuery 在每個 module 都可以使用，而不必撰寫 `require("jquery")`。你需要使用 `ProvidePlugin`（[官方文件](http://webpack.github.io/docs/shimming-modules.html)）。
 
 ```javascript
 // main.js
@@ -787,17 +789,17 @@ module.exports = {
 };
 ```
 
-## Demo14: Exposing global variables ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo14))
+## Demo14：暴露（expose）全域變數 ([source](https://github.com/jigsawye/webpack-demos/tree/master/demo14))
 
-If you want to use some global variables, and don't want to include them in the Webpack bundle, you can enable `externals` field in `webpack.config.js` ([official document](http://webpack.github.io/docs/library-and-externals.html)).
+如果你想使用一些全域變數，且不想讓他們包含在 Webpack bundle 中，你可以啟用 `webpack.config.js` 中的 `externals` 區塊（[官方文件](http://webpack.github.io/docs/library-and-externals.html)）。
 
-For example, we have a `data.js`.
+例如，我們有個 `data.js`。
 
 ```javascript
 var data = 'Hello World';
 ```
 
-We can expose `data` as a global variable.
+我們可以暴露 `data` 作為全域變數。
 
 ```javascript
 // webpack.config.js
@@ -819,14 +821,13 @@ module.exports = {
     ]
   },
   externals: {
-    // require('data') is external and available
-    //  on the global var data
+    // require('data') 在全域變數資料中是外部且可用的
     'data': 'data'
   }
 };
 ```
 
-Now, you require `data` as a module variable in your script. but it actually is a global variable.
+現在，你在 script 中 require `data` 作為 module 變數。但是它實際上是全域變數。
 
 ```javascript
 // main.jsx
@@ -840,30 +841,31 @@ ReactDOM.render(
 );
 ```
 
-## Demo15: Hot Module Replacement ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo15))
+## Demo15：Hot Module Replacement（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo15)）
 
-[Hot Module Replacement](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack) (HMR) exchanges, adds, or removes modules while an application is running **without a page reload**.
+[Hot Module Replacement](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack)（HMR）在應用程式執行時進行交換、增加，或移除 modules，但**頁面不需重新載入**。
 
-You have [two ways](http://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement) to enable Hot Module Replacement with the webpack-dev-server.
+你有[兩種方式](http://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement)在 webpack-dev-server 啟用 Hot Module Replacement。
 
-(1) Specify `--hot` and `--inline` on the command line
+(1) 在 command line 指定 `--hot` 及 `--inline`
 
 ```bash
 $ webpack-dev-server --hot --inline
 ```
 
-Meaning of the options:
+這些選項的意義：
 
-- `--hot`: adds the HotModuleReplacementPlugin and switch the server to hot mode.
-- `--inline`: embed the webpack-dev-server runtime into the bundle.
-- `--hot --inline`: also adds the webpack/hot/dev-server entry.
+- `--hot`: 增加 HotModuleReplacementPlugin 並切換 server 至 hot 模式。
+- `--inline`: 嵌入 webpack-dev-server runtime 至 bundle。
+- `--hot --inline`: 還增加了 webpack/hot/dev-server 進入點。
 
 (2) Modify `webpack.config.js`.
+(2) 修改 `webpack.config.js`。
 
-- add `new webpack.HotModuleReplacementPlugin()` to the `plugins` field
-- add `webpack/hot/dev-server` and `webpack-dev-server/client?http://localhost:8080` to the `entry` field
+- 增加 `new webpack.HotModuleReplacementPlugin()` 至 `plugins` 區塊
+- 增加 `webpack/hot/dev-server` 及 `webpack-dev-server/client?http://localhost:8080` 至 `entry` 區塊
 
-`webpack.config.js` looks like the following.
+`webpack.config.js` 看起來會像下方那樣。
 
 ```javascript
 var webpack = require('webpack');
@@ -896,15 +898,15 @@ module.exports = {
 };
 ```
 
-Now launch the dev server.
+現在執行 dev 伺服器。
 
 ```bash
 $ webpack-dev-server
 ```
 
-Visiting http://localhost:8080, you should see 'Hello World' in your browser.
+瀏覽 http://localhost:8080，你應該在瀏覽器中看見「Hello World」。
 
-Don't close the server. Open a new terminal to edit `App.js`, and modify 'Hello World' into 'Hello Webpack'. Save it, and see what happened in the browser.
+別關閉伺服器。開啟一個新的終端機編輯 `App.js`，並將「Hello World」修改成「Hello Webpack」。儲存並看看瀏覽器發生什麼事。
 
 App.js
 
@@ -941,11 +943,11 @@ index.html
 </html>
 ```
 
-## Demo16: React router ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo16))
+## Demo16：React router（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo16)）
 
-This demo uses webpack to build [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md)'s official example.
+此 demo 使用 webpack 來 build [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md) 的官方範例。
 
-Let's imagine a little app with a dashboard, inbox, and calendar.
+讓我們想像一個小型 app，它擁有 dashboard、inbox 及 calendar。
 
 ```
 +---------------------------------------------------------+
@@ -973,7 +975,7 @@ Let's imagine a little app with a dashboard, inbox, and calendar.
 $ webpack-dev-server
 ```
 
-## Useful links
+## 相關連結
 
 - [Webpack docs](http://webpack.github.io/docs/)
 - [webpack-howto](https://github.com/petehunt/webpack-howto), by Pete Hunt
