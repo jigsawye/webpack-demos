@@ -226,7 +226,7 @@ module.exports = {
 };
 ```
 
-在 `webpack.config.js` 中，`module.loaders` 部份被使用於指定 loaders。上方的程式片段使用了 `babel-loader`，它還同時需要 [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) 與 [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) 來轉譯 ES6 及 Reacy。你也可以使用其他方式來設定 babel 的查詢（query）選項。
+在 `webpack.config.js` 中，`module.loaders` 部份被使用於指定 loaders。上方的程式片段使用了 `babel-loader`，它還同時需要 [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) 與 [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) 來轉譯 ES6 及 React。你也可以使用其他方式來設定 babel 的查詢（query）選項。
 
 ```javascript
 module: {
