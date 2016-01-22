@@ -874,7 +874,6 @@ $ webpack-dev-server --hot --inline
 - `--inline`: 嵌入 webpack-dev-server runtime 至 bundle。
 - `--hot --inline`: 還增加了 webpack/hot/dev-server 進入點。
 
-(2) Modify `webpack.config.js`.
 (2) 修改 `webpack.config.js`。
 
 - 增加 `new webpack.HotModuleReplacementPlugin()` 至 `plugins` 區塊
