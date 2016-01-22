@@ -439,7 +439,7 @@ module.exports = {
 $ webpack-dev-server
 ```
 
-瀏覽 http://127.0.0.1:8080，你會看到只有第二個 `h1` 是紅色，因為它的 CSS 為區域範圍，而兩個 `h2` 都是藍色，因為它的 CSS 是全域範圍（global scoped）。
+瀏覽 http://127.0.0.1:8080 ，你會看到只有第二個 `h1` 是紅色，因為它的 CSS 為區域範圍，而兩個 `h2` 都是藍色，因為它的 CSS 是全域範圍（global scoped）。
 
 <a name="demo07-uglifyjs-plugin-source">
 ## Demo07：UglifyJs Plugin（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo07)）
