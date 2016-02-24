@@ -361,7 +361,7 @@ module.exports = {
 <a name="demo06-css-module-source">
 ## Demo06：CSS Module（[source](https://github.com/jigsawye/webpack-demos/tree/master/demo06)）
 
-`css-loader?modules`（查詢參數 modules）會開啟 [CSS Modules](https://github.com/css-modules/css-modules) 功能。
+`css-loader?modules`（查詢參數的 modules）會開啟 [CSS Modules](https://github.com/css-modules/css-modules) 功能。
 
 這代表你 module 的 CSS 預設會是區域範圍（local scoped）的 CSS。你可以在選擇器及／或規則使用 `:global(...)` 切換成關閉。（[更多資訊](https://css-modules.github.io/webpack-demo/)）
 
@@ -460,7 +460,7 @@ index.html
 <html>
 <body>
   <script src="bundle.js"></script>
-</boby>
+</body>
 </html>
 ```
 
@@ -616,7 +616,7 @@ module.exports = 'Hello World';
 <html>
   <body>
     <script src="bundle.js"></script>
-  <body>
+  </body>
 </html>
 ```
 
@@ -987,7 +987,7 @@ index.html
 ```
 
 ```bash
-$ webpack-dev-server
+$ webpack-dev-server --history-api-fallback
 ```
 
 ## 相關連結
